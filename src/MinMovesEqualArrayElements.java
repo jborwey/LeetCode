@@ -10,17 +10,16 @@
 public class MinMovesEqualArrayElements {
 
     public static int minMoves2(int[] nums){
-        int length = nums.length;
-        int sum = 0;
-        int minNum = Integer.MAX_VALUE;
+        int result = 0;
+        int minNum = nums[0];
         for(Integer i : nums){
-            sum = sum + i;
-            if(i<minNum){
-                minNum = i;
-            }
+            minNum = Math.min(minNum, i);
+        }
+        for(Integer n : nums){
+            result += n - minNum;
         }
 
-        return sum - minNum * length;
+        return result;
     }
 
     public static void main(String[] args) {
