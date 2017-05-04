@@ -10,10 +10,10 @@ public class ContainsDuplicates2 {
         Set<Integer> foundNums = new HashSet<>();
         for(int i : nums){
             if(!foundNums.add(i)){
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {
